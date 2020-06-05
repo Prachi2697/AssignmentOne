@@ -2,22 +2,27 @@ package com.example.assignment.Model;
 
 import java.time.LocalDate;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="assignment")
+@Table(name="Assignment")
 public class assignmentModel {
 
 		@Id
+		@Column(name="ResourceId")
 		private String resourceId;	
+		@Column(name="ContractName")
 		private String contractName;
+		@Column(name="StartDate")
 		private LocalDate startDate;
+		@Column(name="EndDate")
 		private LocalDate endDate;
-		
 		
 		public String getResourceId() {
 			return resourceId;
@@ -25,7 +30,6 @@ public class assignmentModel {
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
 		}
-		
 		public String getContractName() {
 			return contractName;
 		}
@@ -44,15 +48,10 @@ public class assignmentModel {
 		public void setEndDate(LocalDate endDate) {
 			this.endDate = endDate;
 		}
-		public assignmentModel(String resourceId, String contractName, LocalDate startDate, LocalDate endDate) {
-			super();
-			this.resourceId = resourceId;
-			this.contractName = contractName;
-			this.startDate =startDate;
-			this.endDate = endDate;
-		}
 		public assignmentModel() {
 			super();
 		}
-				
+		
+		
+	
 }

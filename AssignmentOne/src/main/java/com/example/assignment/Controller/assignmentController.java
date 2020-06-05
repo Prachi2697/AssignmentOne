@@ -19,12 +19,14 @@ import com.example.assignment.Service.assignmentService;
 
 @RestController
 public class assignmentController {
+	
 	@Autowired
 	private assignmentService service;	
 	
 	@GetMapping("/contract")     
     public Optional<assignmentModel> GetContract(@RequestParam("name") String name)
     { 
+    	System.out.print("HELOOO");;
    	 return service.getContract(name);
     }
 	
